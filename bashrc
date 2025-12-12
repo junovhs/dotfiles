@@ -13,3 +13,4 @@ eval "$(starship init bash)"
 
 # Starship
 command -v starship >/dev/null && eval "$(starship init bash)"
+export MSYS=winsymlinks:nativestrict
