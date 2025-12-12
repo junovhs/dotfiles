@@ -1,29 +1,24 @@
 # dotfiles
 
-Personal shell and CLI configuration.
-Works on **Windows (Git Bash)** and **Linux (Pop!_OS)**.
+Single-command setup for a consistent shell environment on:
 
-This repo is the single source of truth for:
+- Windows 11 (Git Bash inside Windows Terminal)
+- Pop!_OS (Linux)
+
+This repo is the **single source of truth** for:
 - bash configuration
 - git configuration
 - Starship prompt
 
----
-
-## What this repo contains
-
-- bashrc        -> shell configuration
-- gitconfig     -> git configuration
-- starship.toml -> prompt configuration (Starship)
-- install.sh    -> sets up symlinks
-
-All files are symlinked into \$HOME.
+All configs are applied via **symlinks**.
 
 ---
 
-## Setup — Windows 11 (Git Bash)
+# QUICK START (DO THIS, NOTHING ELSE)
 
-Prereqs:
+## Windows 11 (Git Bash)
+
+Prereqs (one-time, manual):
 - Git for Windows
 - Windows Terminal
 - Developer Mode enabled
@@ -35,18 +30,18 @@ Run:
 cd ~
 git clone https://github.com/junovhs/dotfiles.git
 cd dotfiles
+export MSYS=winsymlinks:nativestrict
 ./install.sh
 
-Close and reopen terminal.
+Close all terminals. Reopen.
+
+Verify (must show arrows):
+
+ls -la ~/.bashrc ~/.gitconfig ~/.config/starship.toml
 
 ---
 
-## Setup — Pop!_OS (Linux)
-
-Prereqs:
-- git
-- curl
-- bash
+## Pop!_OS (Linux)
 
 Run:
 
@@ -59,30 +54,40 @@ git clone https://github.com/junovhs/dotfiles.git
 cd dotfiles
 ./install.sh
 
-Close and reopen terminal.
+Close terminal. Reopen.
+
+Verify (must show arrows):
+
+ls -la ~/.bashrc ~/.gitconfig ~/.config/starship.toml
 
 ---
 
-## Daily usage
+# RESET (SAFE)
 
-Edit files only in:
+If anything breaks, run:
 
-~/dotfiles
+rm -f ~/.bashrc ~/.gitconfig ~/.config/starship.toml
+rm -rf ~/dotfiles
 
-Commit and push:
-
-git commit -am "update"
-git push
-
-On other machines:
-
-cd ~/dotfiles
-git pull
+Then repeat QUICK START.
 
 ---
 
-## Notes
+# DAILY USAGE
 
-- On Windows, symlinks require Developer Mode.
+- Edit configs only in: ~/dotfiles
+- Commit changes:
+  git commit -am "update"
+  git push
+- On other machines:
+  cd ~/dotfiles
+  git pull
+
+---
+
+# NOTES
+
+- This repo intentionally does NOT install system packages.
+- Windows requires Developer Mode for real symlinks.
 - Git Bash uses native Windows symlinks.
-- This repo is intentionally minimal.
+- This setup is minimal by design.

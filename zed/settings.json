@@ -1,0 +1,35 @@
+{
+  "minimap": {
+    "show": "always"
+  },
+  "agent": {
+    "default_model": {
+      "provider": "google",
+      "model": "gemini-2.5-flash"
+    },
+    "model_parameters": []
+  },
+  "base_keymap": "SublimeText",
+  "ui_font_size": 16,
+  "buffer_font_size": 15,
+  "theme": {
+    "mode": "dark",
+    "light": "Ayu Light",
+    "dark": "Ayu Dark"
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  },
+
+  "terminal": {
+    "shell": {
+      "with_arguments": {
+        "program": "C:\\\\Program Files\\\\Git\\\\bin\\\\bash.exe",
+        "args": ["--login"]
+      }
+    },
+    "font_family": "JetBrainsMono Nerd Font",
+    "font_size": 14
+  }
+}
