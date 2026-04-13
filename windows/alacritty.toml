@@ -1,5 +1,23 @@
+
 [general]
+
 working_directory = 'C:\Users\SpencerNunamakerTrav'
 
+
+
 [terminal]
+
 shell = { program = 'C:\Program Files\Git\bin\bash.exe', args = ['--login', '-i'] }
+
+
+
+[keyboard]
+
+bindings = [
+
+  { key = "V", mods = "Control", action = "Paste" },
+
+  { key = "C", mods = "Control|Shift", action = "Copy" }
+
+]
+

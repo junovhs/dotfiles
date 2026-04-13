@@ -1,5 +1,23 @@
+
 [general]
+
 working_directory = '/home/junovhs'
 
+
+
 [terminal]
+
 shell = { program = '/bin/bash', args = ['--login', '-i'] }
+
+
+
+[keyboard]
+
+bindings = [
+
+  { key = "V", mods = "Control|Shift", action = "Paste" },
+
+  { key = "C", mods = "Control|Shift", action = "Copy" }
+
+]
+
