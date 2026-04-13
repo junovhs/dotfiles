@@ -9,4 +9,4 @@ ln -sf "$REPO_DIR/bashrc" "$HOME/.bashrc"
 ln -sf "$REPO_DIR/gitconfig" "$HOME/.gitconfig"
 ln -sf "$REPO_DIR/starship.toml" "$HOME/.config/starship.toml"
 
-echo "Done. Restart your terminal."
+echo "Done. Restart Alacritty."

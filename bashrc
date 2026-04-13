@@ -1,16 +1,22 @@
-export GEMINI_API_KEY="AIzaSyCih1k3VBbhEtp65Vp_X1-xULp90X6Rn9c"
+case $- in
+  *i*) ;;
+  *) return ;;
+esac
+
+case "$OSTYPE" in
+  msys*|cygwin*)
+    export MSYS="winsymlinks:nativestrict"
+    ;;
+esac
 
 export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+[ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"
+[ -s "$NVM_DIR/bash_completion" ] && . "$NVM_DIR/bash_completion"
 
-[[ "$TERM_PROGRAM" == "kiro" ]] && . "$(kiro --locate-shell-integration-path bash)"
-alias process="./run.sh"
-export PATH="/c/Users/SpencerNunamakerTrav/saccade/target/release:$PATH"
+[ -f "$HOME/.bashrc.local" ] && . "$HOME/.bashrc.local"
 
-# Starship prompt
-eval "$(starship init bash)"
+tree() {
+  cmd //c tree "$@"
+}
 
-# Starship
-command -v starship >/dev/null && eval "$(starship init bash)"
-export MSYS=winsymlinks:nativestrict
+command -v starship >/dev/null 2>&1 && eval "$(starship init bash)"

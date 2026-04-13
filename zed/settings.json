@@ -1,13 +1,13 @@
 {
   "minimap": {
-    "show": "always"
+    "show": "always",
   },
   "agent": {
     "default_model": {
       "provider": "google",
-      "model": "gemini-2.5-flash"
+      "model": "gemini-2.5-flash",
     },
-    "model_parameters": []
+    "model_parameters": [],
   },
   "base_keymap": "SublimeText",
   "ui_font_size": 16,
@@ -15,21 +15,28 @@
   "theme": {
     "mode": "dark",
     "light": "Ayu Light",
-    "dark": "Ayu Dark"
+    "dark": "Ayu Mirage",
   },
   "telemetry": {
     "diagnostics": false,
-    "metrics": false
+    "metrics": false,
   },
-
   "terminal": {
     "shell": {
       "with_arguments": {
-        "program": "C:\\\\Program Files\\\\Git\\\\bin\\\\bash.exe",
-        "args": ["--login"]
-      }
+        "program": "C:\\Program Files\\Git\\bin\\bash.exe",
+        "args": ["--login"],
+      },
     },
     "font_family": "JetBrainsMono Nerd Font",
-    "font_size": 14
-  }
+    "font_size": 14,
+  },
+
+  "soft_wrap": "editor_width",
+  "languages": {
+    "Markdown": {
+      "format_on_save": "on",
+      "preferred_line_length": 80,
+    },
+  },
 }

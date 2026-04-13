@@ -1,20 +1,11 @@
 [credential]
-	helper = manager-core
+    helper = manager-core
 [core]
-	autocrlf = true
+    autocrlf = true
 [user]
-	name = junovhs
-	email = junovhs@gmail.com
+    name = junovhs
+    email = junovhs@gmail.com
 [url "git@github.com:"]
-	insteadOf = https://github.com/
+    insteadOf = https://github.com/
 [push]
-	autoSetupRemote = true
-[alias]
-	prev = nav prev
-	next = nav next
-	where = nav where
-	nav-start = nav start
-	nav-stop = nav stop
-	live = nav live
-[safe]
-	directory = %(prefix)///wsl.localhost/Ubuntu/home/junowork/apps/slopchop
+    autoSetupRemote = true
