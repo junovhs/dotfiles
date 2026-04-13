@@ -4,9 +4,21 @@ set -euo pipefail
 REPO_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 mkdir -p "$HOME/.config"
+mkdir -p "$HOME/.config/alacritty"
 
 ln -sf "$REPO_DIR/bashrc" "$HOME/.bashrc"
 ln -sf "$REPO_DIR/gitconfig" "$HOME/.gitconfig"
 ln -sf "$REPO_DIR/starship.toml" "$HOME/.config/starship.toml"
 
-echo "Done. Restart Alacritty."
+case "$OSTYPE" in
+  msys*|cygwin*)
+    APPDATA_WIN="$(cygpath "$APPDATA")"
+    mkdir -p "$APPDATA_WIN/alacritty"
+    ln -sf "$REPO_DIR/windows/alacritty.toml" "$APPDATA_WIN/alacritty/alacritty.toml"
+    ;;
+  linux*)
+    ln -sf "$REPO_DIR/linux/alacritty.toml" "$HOME/.config/alacritty/alacritty.toml"
+    ;;
+esac
+
+echo "Done. Restart terminal."
